@@ -63,13 +63,16 @@ gulp.task('scripts', function () {
 
 gulp.task('browsersync', function () {
     browsersync({
-        proxy: "plugins/freewal_dds/src",
+        server: { // Определяем параметры сервера
+            baseDir: 'src' // Директория для сервера - app
+        },
+       // proxy: "plugins/freewal_dds/src",
         notify: false
     });
 });
 gulp.task('watch', ['browsersync', 'sass', 'scripts'], function () {
     gulp.watch(path.src.sass, ['sass']); // Наблюдение за sass файлами в папке sass
-    //gulp.watch(path.src.html, browsersync.reload); // Наблюдение за HTML файлами в корне проекта
+    gulp.watch(path.src.html, browsersync.reload); // Наблюдение за HTML файлами в корне проекта
     gulp.watch(path.src.php, browsersync.reload); // Наблюдение за php файлами в корне проекта
     gulp.watch(path.src.js, browsersync.reload); // Наблюдение за js файлами в корне проекта
 });

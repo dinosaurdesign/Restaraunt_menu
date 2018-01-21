@@ -1,0 +1,33 @@
+//controls
+ul.controls
+  font-size: 15px
+  margin: 20px
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: center
+  li
+    text-transform: uppercase
+    position: relative
+    list-style: none
+    padding: 10px
+    cursor: pointer
+    transition: background 150ms
+    color: $sorttext
+  li.active
+    color: $activemenu
+// Галерея
+.galery_container
+  display: grid
+  grid-gap: 40px
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+  overflow: hidden
+  .mix
+    box-sizing: content-box
+    overflow: hidden
+    span.cost
+      display: block
+      margin-top: 10px
+      font-size: 1.6rem
+
+
